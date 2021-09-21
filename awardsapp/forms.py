@@ -8,10 +8,10 @@ class NewImageForm(forms.ModelForm):
         model = Image
         exclude = ['user',]
 
-class NewProjectForm(forms.ModelForm):
-    class Meta:
-        model = Project
-        exclude = ['user',]
+class PostProjectForm(forms.ModelForm):
+  class Meta:
+    model = Project
+    exclude = ["profile", "post_date"]
 
 class ReviewForm(forms.ModelForm):
     class Meta:
@@ -29,3 +29,17 @@ class UpdatebioForm(forms.ModelForm):
 class NewsLetterForm(forms.Form):
     your_name = forms.CharField(label='First Name',max_length=30)
     email = forms.EmailField(label='Email')
+
+class ProfileForm(forms.ModelForm):
+	model = Profile
+	username = forms.CharField(label='Username',max_length = 30)
+	
+	bio = forms.CharField(label='Image Caption',max_length=500)
+	profile_pic = forms.ImageField(label = 'Image Field')
+
+
+class ProfileUploadForm(forms.ModelForm):
+	class Meta:
+		model = Profile
+		
+		exclude = ['user']

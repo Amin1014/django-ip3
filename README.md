@@ -52,7 +52,8 @@ cd django-ip3
  python manage.py test 
 ```
 Open the application on your browser `127.0.0.1:8000`.  
-
+## Known Bugs
+- My app only rates and comments in the admin dashboard
   
 ## Technology used  
   
